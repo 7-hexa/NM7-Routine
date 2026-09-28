@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="My personal training routine. Upper / Lower / Upper / Lower / Recovery." />
+  <meta name="author" content="Nour" />
+  <meta name="theme-color" content="#050607" />
+  <title>NOUR — My Training Routine</title>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <!-- Fonts: condensed display (Bebas Neue), labels (Oswald), body (Inter), handwritten accent (Caveat) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body id="top">
+
+  <!-- ============================= NAVBAR ============================= -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a class="logo" href="#home" aria-label="Nour — home">
+        <span class="logo-text">NOUR</span>
+        <span class="logo-dot" aria-hidden="true"></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <!-- populated by app.js from CONFIG.nav -->
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" id="themeToggle" type="button"
+                aria-label="Toggle colour theme" aria-pressed="false" title="Toggle theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <a class="btn btn-primary btn-sm nav-cta" href="#split">
+          VIEW MY ROUTINE
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M4 12h15M12.5 5.5 19 12l-6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+
+        <button class="icon-btn menu-toggle" id="menuToggle" type="button"
+                aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="bar" aria-hidden="true"></span>
+          <span class="bar" aria-hidden="true"></span>
+          <span class="bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Site menu" hidden>
+    <div class="mobile-menu-head">
+      <span class="logo-text">NOUR</span>
+      <button class="icon-btn" id="menuClose" type="button" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-links" id="mobileLinks" aria-label="Mobile primary"></nav>
+    <div class="mobile-foot">
+      <div class="socials" id="mobileSocials"></div>
+      <p class="mobile-tag">MY TRAINING ROUTINE</p>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================= HERO ============================= -->
+    <section class="hero" id="home">
+      <div class="hero-grid">
+        <!-- Left: copy -->
+        <div class="hero-copy">
+          <p class="label label-accent hero-label reveal">
+            <span class="label-line" aria-hidden="true"></span>
+            MY TRAINING ROUTINE
+          </p>
+
+          <h1 class="hero-title reveal" data-delay="80">
+            NOUR
+            <span class="hand">My routine</span>
+          </h1>
+
+          <div class="hero-actions reveal" data-delay="240">
+            <a class="btn btn-primary" href="#split">
+              VIEW MY ROUTINE
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 12h15M12.5 5.5 19 12l-6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <button class="btn btn-ghost" id="introOpen" type="button">
+              <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M8.5 5.5 18 12l-9.5 6.5z" fill="currentColor"/></svg>
+              WATCH INTRO
+            </button>
+          </div>
+
+          <div class="hero-stats reveal" data-delay="320">
+            <div class="stat">
+              <span class="stat-num">4</span>
+              <span class="stat-label">DAYS / WEEK</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat">
+              <span class="stat-num">3</span>
+              <span class="stat-label">WORKOUTS</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat">
+              <span class="stat-num">24</span>
+              <span class="stat-label">EXERCISES</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: cinematic image -->
+        <div class="hero-media reveal" data-delay="200">
+          <div class="hero-frame">
+            <img class="hero-img" data-scroll-motion src="assets/images/hero.jpg" alt="A dark gym lit by dramatic red light" fetchpriority="high" decoding="async" />
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="hero-badge">
+              <span class="badge-num">01</span>
+              <span class="badge-text">UPPER / LOWER<br>UPPER / LOWER / RECOVERY</span>
+            </div>
+          </div>
+
+          <!-- Far right vertical rail -->
+          <div class="hero-rail" aria-hidden="true">
+            <span class="rail-text">DISCIPLINE — BUILDS — FREEDOM</span>
+            <div class="socials socials-vertical" id="heroSocials"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span>SCROLL</span>
+        <span class="scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- ============================= TRAINING SYSTEM ============================= -->
+    <section class="split section" id="split">
+      <div class="container">
+        <div class="section-head">
+          <p class="label label-accent reveal"><span class="label-line" aria-hidden="true"></span>TRAINING SYSTEM</p>
+          <h2 class="section-title reveal" data-delay="60">MY ROUTINE</h2>
+        </div>
+
+        <div class="split-cards" id="splitCards" role="group" aria-label="My training split">
+          <!-- cards generated by app.js from workouts[] -->
+        </div>
+
+        <p class="split-hint reveal" aria-hidden="true">SELECT A DAY TO SEE WHAT I DO</p>
+      </div>
+    </section>
+
+    <!-- ============================= WORKOUT DETAILS ============================= -->
+    <section class="details section" id="details">
+      <div class="container">
+        <div class="details-grid" id="detailsGrid">
+
+          <!-- LEFT: workout info -->
+          <aside class="detail-col detail-info reveal" id="workoutInfo">
+            <p class="detail-day" id="infoDay">DAY 01</p>
+            <h3 class="detail-title" id="infoTitle">UPPER</h3>
+            <p class="detail-note" id="infoNote">Heavy barbell work first, then accessories.</p>
+
+            <div class="info-block">
+              <p class="label">FOCUS</p>
+              <ul class="focus-list" id="infoFocus"></ul>
+            </div>
+
+            <div class="info-block">
+              <p class="label">EST. TIME</p>
+              <p class="info-value" id="infoTime">60 - 90 Minutes</p>
+            </div>
+          </aside>
+
+          <!-- CENTER: exercise list -->
+          <div class="detail-col detail-exercises reveal" data-delay="100" id="exercises">
+            <div class="exercises-head">
+              <h3 class="exercises-title">WHAT I DO</h3>
+              <span class="exercises-count" id="exerciseCount">7 EXERCISES</span>
+            </div>
+
+            <div class="table-wrap">
+              <table class="exercise-table">
+                <thead>
+                  <tr>
+                    <th scope="col" class="col-num">#</th>
+                    <th scope="col" class="col-thumb"></th>
+                    <th scope="col">EXERCISE</th>
+                    <th scope="col">SETS</th>
+                    <th scope="col">REPS</th>
+                    <th scope="col">DEMO</th>
+                  </tr>
+                </thead>
+                <tbody id="exerciseRows">
+                  <!-- rows generated by app.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- RIGHT: exercise preview -->
+          <div class="detail-col detail-preview reveal" data-delay="200">
+            <div class="preview-card" id="previewCard">
+              <div class="preview-media">
+                <img id="previewImage" src="assets/images/exercises/bench.jpg" alt="Exercise preview" loading="lazy" decoding="async" />
+                <video id="previewVideo" autoplay muted loop playsinline preload="metadata" aria-hidden="true" hidden></video>
+                <div class="preview-overlay" aria-hidden="true"></div>
+                <button class="preview-play" id="previewPlay" type="button" aria-label="Play exercise demo">
+                  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M8.5 5.5 18 12l-9.5 6.5z" fill="currentColor"/></svg>
+                </button>
+                <span class="preview-time" id="previewTime">00:45</span>
+              </div>
+              <div class="preview-body">
+                <p class="label">CURRENT EXERCISE</p>
+                <h4 class="preview-name" id="previewName">BENCH PRESS</h4>
+                <p class="preview-volume" id="previewVolume">4 × 6 - 10</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RECOVERY STATE (shown only when DAY 04 is selected) -->
+          <div class="recovery-state" hidden>
+            <div class="recovery-card">
+              <span class="recovery-glow" aria-hidden="true"></span>
+              <span class="card-num recovery-num" aria-hidden="true">04</span>
+              <p class="recovery-day">DAY 04</p>
+              <h3 class="recovery-title">RECOVERY</h3>
+              <p class="recovery-note">No training today.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= ABOUT ============================= -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p class="label label-accent"><span class="label-line" aria-hidden="true"></span>ABOUT</p>
+            <h2 class="section-title">THE ROUTINE</h2>
+            <p class="about-text">
+              Four days. Two upper. One lower. One recovery.
+              <span class="hand">That's it.</span>
+            </p>
+          </div>
+
+          <div class="about-stats reveal" data-delay="120">
+            <div class="about-stat">
+              <span class="about-stat-num">4</span>
+              <span class="about-stat-label">DAYS A WEEK</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-num">U/L</span>
+              <span class="about-stat-label">UPPER / LOWER SPLIT</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-num">60<span class="about-stat-small">MIN</span></span>
+              <span class="about-stat-label">AVERAGE SESSION</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-num">24</span>
+              <span class="about-stat-label">EXERCISES</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= CTA ============================= -->
+    <section class="cta section" id="cta">
+      <div class="container">
+        <div class="cta-card reveal">
+          <img class="cta-bg" data-scroll-motion src="assets/images/lower.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+          <div class="cta-overlay" aria-hidden="true"></div>
+          <div class="cta-content">
+            <p class="label label-accent"><span class="label-line" aria-hidden="true"></span>THE WHOLE THING</p>
+            <h2 class="cta-title">THE WHOLE<br />ROUTINE</h2>
+            <a class="btn btn-primary btn-lg" href="#split">
+              VIEW MY ROUTINE
+              <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M4 12h15M12.5 5.5 19 12l-6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= CONTACT ============================= -->
+    <section class="contact section" id="contact">
+      <div class="container container-narrow">
+        <div class="section-head">
+          <p class="label label-accent reveal"><span class="label-line" aria-hidden="true"></span>CONTACT</p>
+          <h2 class="section-title reveal" data-delay="60">CONTACT</h2>
+        </div>
+        <div class="contact-links reveal" data-delay="180" id="contactSocials">
+          <!-- socials generated by app.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================= FOOTER ============================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-text logo-lg">NOUR<span class="logo-dot" aria-hidden="true"></span></span>
+          <p class="footer-tag">MY TRAINING ROUTINE</p>
+        </div>
+
+        <nav class="footer-social" aria-label="Social links">
+          <div class="socials" id="footerSocials"></div>
+        </nav>
+
+        <div class="footer-mantra" aria-hidden="true">
+          <span>UPPER</span><span class="mantra-slash">/</span>
+          <span>LOWER</span><span class="mantra-slash">/</span>
+          <span>RECOVERY</span>
+        </div>
+      </div>
+
+      <div class="pulse-line" aria-hidden="true"><span class="pulse-dot"></span></div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear">2026</span> NOUR. All rights reserved.</p>
+        <p>UPPER / LOWER / RECOVERY</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================= INTRO VIDEO MODAL ============================= -->
+  <div class="modal" id="introModal" role="dialog" aria-modal="true" aria-labelledby="introModalTitle" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-box modal-box-wide">
+      <div class="modal-head">
+        <span class="modal-title" id="introModalTitle">INTRO</span>
+        <button class="icon-btn" data-close-modal type="button" aria-label="Close video">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+
+      <div class="media-stage">
+        <video class="modal-video" id="introVideo" controls playsinline preload="metadata"></video>
+        <div class="media-placeholder" id="introPlaceholder" hidden>
+          <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><path d="M8.5 5.5 18 12l-9.5 6.5z" fill="currentColor"/></svg>
+          <p class="placeholder-label">VIDEO COMING SOON</p>
+          <p class="placeholder-sub">Drop a file at assets/videos/intro.mp4</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================= DEMO VIDEO MODAL ============================= -->
+  <div class="modal" id="demoModal" role="dialog" aria-modal="true" aria-labelledby="demoModalTitle" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-box">
+      <div class="modal-head">
+        <span class="modal-title" id="demoModalTitle">EXERCISE DEMO</span>
+        <button class="icon-btn" data-close-modal type="button" aria-label="Close video">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+
+      <div class="media-stage">
+        <video class="modal-video" id="demoVideo" controls playsinline preload="metadata" loop></video>
+        <img class="modal-gif" id="demoGif" alt="" hidden />
+        <div class="media-placeholder" id="demoPlaceholder" hidden>
+          <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><path d="M8.5 5.5 18 12l-9.5 6.5z" fill="currentColor"/></svg>
+          <p class="placeholder-label" id="demoPlaceholderLabel">DEMO COMING SOON</p>
+          <p class="placeholder-sub" id="demoPlaceholderSub">Drop a file in assets/videos/exercises/</p>
+        </div>
+      </div>
+
+      <div class="demo-meta" id="demoMeta"></div>
+    </div>
+  </div>
+
+  <!-- Scripts: config + data first, then the app -->
+  <script src="js/config.js"></script>
+  <script src="js/workouts.js?v=20260928-10"></script>
+  <script src="js/app.js?v=20260929-4"></script>
+</body>
+</html>
